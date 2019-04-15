@@ -40,5 +40,16 @@ namespace Library.Clients
 
             return await response.Content.ReadAsStringAsync();
         }
+
+        public async Task<int> GetMostFrequentElementInArrayLinq(int[] nums, CancellationToken cancellationToken)
+        {
+            string functionName = "MostFrequentElementInArrayLinq";
+            HttpRequestMessage request = new HttpRequestMessage(HttpMethod.Post, $"api/{functionName}?code={_apiKey}");
+            request.Content = new StringContent(JsonConvert.SerializeObject(nums));
+
+            HttpResponseMessage response = await _httpClient.SendAsync(request, cancellationToken);
+
+            return int.Parse(await response.Content.ReadAsStringAsync());
+        }
     }
 }

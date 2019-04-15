@@ -24,5 +24,12 @@ namespace WaleApi.Controllers
             string response = await _webAccessibleLibraryClient.Function1(cancellationToken);
             return Ok(response);
         }
+
+        [HttpPost("MostFrequentElementInArrayLinq")]
+        public async Task<ActionResult> FindMostFrequentElementInArrayLinq([FromBody] int[] nums, CancellationToken cancellationToken)
+        {
+            int response = await _webAccessibleLibraryClient.GetMostFrequentElementInArrayLinq(nums, cancellationToken);
+            return Ok(response);
+        }
     }
 }
