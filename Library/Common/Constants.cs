@@ -1,5 +1,8 @@
 ﻿namespace Library.Common
 {
+    /// <summary>
+    /// Constants used in this library.
+    /// </summary>
     public static class Constants
     {
         #region Configuration

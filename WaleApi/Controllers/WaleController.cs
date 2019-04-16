@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WaleApi.Controllers
 {
+    /// <summary>
+    /// Controller that will call the web accessible library.
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class WaleController : ControllerBase
@@ -25,6 +28,7 @@ namespace WaleApi.Controllers
             return Ok(response);
         }
 
+        // GET api/wale/MostFrequentElementInArrayLinq
         [HttpPost("MostFrequentElementInArrayLinq")]
         public async Task<ActionResult> FindMostFrequentElementInArrayLinq([FromBody] int[] nums, CancellationToken cancellationToken)
         {

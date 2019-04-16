@@ -32,12 +32,13 @@ namespace WebAccessibleLibrary
                 return new BadRequestObjectResult($"Please pass a list of integers in the request body.\r\n{ex.Message}");
             }
 
-            int mostFrequent = nums.GroupBy(n => n)
+            int mostFrequent = nums
+                .GroupBy(n => n)
                 .OrderByDescending(g => g.Count())
                 .First()
                 .Key;
 
-            return (ActionResult)new OkObjectResult(mostFrequent);
+            return new OkObjectResult(mostFrequent);
         }
     }
 }

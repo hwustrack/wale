@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 
 namespace Library.Clients
 {
+    /// <summary>
+    /// Client that makes requests to the WebAccessibleLibrary in Azure Functions
+    /// </summary>
     public class WebAccessibleLibraryClient : IWebAccessibleLibraryClient
     {
         private readonly HttpClient _httpClient;
